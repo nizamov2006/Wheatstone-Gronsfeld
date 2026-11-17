@@ -1,0 +1,32 @@
+{
+  "name": "wheatstone-gronsfeld",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline Wheatstone and Gronsfeld cipher laboratory",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis portable --x64"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "kz.wheatstone.gronsfeld",
+    "productName": "Wheatstone-Gronsfeld",
+    "asar": true,
+    "files": ["main.js", "Wheatstone-Gronsfeld.html", "app.ico"],
+    "directories": { "output": "dist" },
+    "win": {
+      "icon": "app.ico",
+      "target": ["nsis", "portable"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
